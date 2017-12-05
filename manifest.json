@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+	"name": "Facebook Post Likers Inviter",
+	"version": "1.0",
+	"description": "Automatically invite everyone who liked your page's post to like your page as well.",
+	"icons": {
+		"128": "icon128.png",
+		"48": "icon48.png",
+		"16": "icon16.png"
+	},
+	"page_action": {
+		"default_icon": "icon16.png",
+		"default_popup": "popup.html",
+		"default_title": "Facebook Post Likers Inviter"
+	},
+	"background": {
+		"scripts": ["eventPage.js"],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://www.facebook.com/*"],
+			"js": ["content.js"]
+		}
+	],
+	"permissions": [
+		"tabs", "storage", "notifications", "https://www.facebook.com/*"
+	]
+}
